@@ -33,10 +33,10 @@ class YelpLocationLinksSpider(scrapy.Spider):
             yield scrapy.Request(url=str(link), callback=self.parse, headers=HEADERS)
 
     def parse(self, response):
-        uls = response.xpath('//*[@id="super-container"]/div[2]/div[2]/div/ul/li/a/@href').getall()
+        uls = response.xpath('//*[@id="super-container"]/div[2]/div[2]/div/ul/li/a/text()').getall()
         for ul in uls:
-            li = 'https://www.yelp.com'+ul
-            with open('yelp_links.txt', 'a') as f:
+            li = '\'https://www.yelp.com/search?cflt=education&find_loc='+ul+'\','
+            with open('yelp_links12.txt', 'a') as f:
                 f.write(li)
                 f.write('\n')
             print(li)

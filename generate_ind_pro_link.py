@@ -45,8 +45,8 @@ if __name__ == "__main__":
     base_page_url = "https://www.whitepages.com/"
     driver.get(base_page_url)
     pageSource = driver.page_source
-    f = open(f"profile-links{linksFileNumber}.txt", "w")
-    failed_links_file = open(f"failed-links{linksFileNumber}.txt", "w")
+    f = open(f"profile-links{linksFileNumber}_1.txt", "a")
+    failed_links_file = open(f"failed-links{linksFileNumber}_1.txt", "a")
     i = 0
     #urls = urls[300000:]
     #for index,url in enumerate(urls):
