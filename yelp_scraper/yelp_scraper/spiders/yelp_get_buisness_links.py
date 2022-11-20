@@ -67,7 +67,9 @@ class YelpGetBuisnessLinksSpider(scrapy.Spider):
             :param response: the response received from a `Request` object
         :return: an instance of `YelpService` populated with the data scraped from the response
         """
-        data = response.xpath('//script[0]/text()').extract()
+        #data = response.xpath('//script[1]/text()').extract()
+        data = response.xpath('//script[@type="application/ld+json" and contains(text(),"LocalBusiness")]/text()').extract()
+
         #jsonData = json.loads(data)
         return YelpService(data = data)
         # return YelpService(name=self._extract_service_name(response),
