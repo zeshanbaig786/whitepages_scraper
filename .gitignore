@@ -1,11 +1,2 @@
-profile-links.txt
-failed-links.txt
-links.txt
-links1.txt
-links2.txt
-links3.txt
-links4.txt
-links5.txt
-links6.txt
-links7.txt
-__pycache__
+*.txt
+__pycache__/

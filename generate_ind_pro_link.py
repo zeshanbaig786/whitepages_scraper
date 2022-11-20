@@ -71,7 +71,7 @@ if __name__ == "__main__":
                     btnContToResults.send_keys(Keys.RETURN)
         except Exception as e:
             print(e)
-            failed_links_file.write(f"{index},{url}\n")
+            #failed_links_file.write(f"{index},{url}\n")
 
         try:
             profile_links = driver.find_elements(By.XPATH, "/html/body/div[3]/div/div[2]/a")
