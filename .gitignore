@@ -1,4 +1,5 @@
 *.txt
 *.json
 !yelp_*.json
+!profile-links*
 __pycache__/
