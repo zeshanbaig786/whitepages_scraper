@@ -1,3 +1,4 @@
 *.txt
 *.json
+!yelp_*.json
 __pycache__/
