@@ -39,98 +39,159 @@ class YelpGetBuisnessLinksSpider(scrapy.Spider):
     allowed_domains = ["yelp.com"]
     user_agent = 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36'
     i = 0
-    start_urls = [
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Tontitown'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Van Buren'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Walnut Ridge'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=West Helena'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=West Memphis'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=White Hall'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Yellville'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Abbeville'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Alabaster'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Albertville'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Alexander City'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Anchorage'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Andalusia'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Anniston'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Arab'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Ardmore'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Athens'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Atmore'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Attalla'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Auburn'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Bay Minette'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Bayou La Batre'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Bessemer'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Birmingham'),
-        get_proxy_url(
-            'https://www.yelp.com/search?cflt=education&find_loc=Boaz')
-    ]
-
-   # def start_requests(self):
-   #     t = 0
-   #     header = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36"
-   #     # headers = {"User-Agent": header}
-   #     HEADERS = {
-   #         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0",
-   #         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-   #         "Accept-Language": "en-US,en;q=0.5",
-   #         "Accept-Encoding": "gzip, deflate",
-   #         "Connection": "keep-alive",
-   #         "Upgrade-Insecure-Requests": "1",
-   #         "Sec-Fetch-Dest": "document",
-   #         "Sec-Fetch-Mode": "navigate",
-   #         "Sec-Fetch-Site": "none",
-   #         "Sec-Fetch-User": "?1",
-   #         "Cache-Control": "max-age=0",
-   #     }
-   #     f = open("D:\midTT\whitepages_scraper\yelp_scraper\yelp_links.txt", "r")
-   #     for link in f.readline():
-   #         print(link)
-   #         yield scrapy.Request(url=link, callback=self.parse, headers=HEADERS)
-   #     f.close()
-   # yield self.start_urls
+    start_urls = [get_proxy_url('https://www.yelp.com/search?cflt=education&find_loc=Bon Secour'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Brewton'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Calera'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Carlsbad Ca'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Center Point'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Centre'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Chelsea'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Childersburg'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Clanton'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Columbiana'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Cottondale'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Cullman'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Dadeville'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Daleville'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Dallas Tx'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Daphne'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Dauphin Island'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Decatur'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Demopolis'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Dora'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Dothan'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Elberta'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Enterprise'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Eufaula'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Evergreen'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Fairfield'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Fairhope'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Florence'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Foley'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Fort Deposit'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Fort Mitchell'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Fort Payne'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Fort Rucker'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Fultondale'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Gadsden'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Gardendale'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Girdwood'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Grand Bay'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Greenville'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Gulf Shores'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Guntersville'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Hamilton'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Hanceville'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Hartselle'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Harvest'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Hazel Green'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Headland'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Heflin'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Helena'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Homewood'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Hoover'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Hope Hull'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Hueytown'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Huntsville'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Irondale'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Irvington'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Jackson'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Jacksonville'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Jasper'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Jupiter'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Lanett'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Leeds'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Lillian'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Lincoln'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Livingston'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Loxley'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Luverne'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Madison'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Magnolia Springs'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Manitou Springs CO'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Mc Calla'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=McCalla'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Mentone'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Meridianville'),
+                  get_proxy_url(
+                      'https://www.yelp.com/search?cflt=education&find_loc=Millbrook')
+                  ]
 
     def parse(self, response):
-        # HEADERS = {
-        #     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0",
-        #     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        #     "Accept-Language": "en-US,en;q=0.5",
-        #     "Accept-Encoding": "gzip, deflate",
-        #     "Connection": "keep-alive",
-        #     "Upgrade-Insecure-Requests": "1",
-        #     "Sec-Fetch-Dest": "document",
-        #     "Sec-Fetch-Mode": "navigate",
-        #     "Sec-Fetch-Site": "none",
-        #     "Sec-Fetch-User": "?1",
-        #     "Cache-Control": "max-age=0",
-        #     "Referer": "https://www.google.com"
-        # }
+
         # if response.url.startswith("https://www.yelp.com/search?"):
         if 'search' in response.url and 'cflt' in response.url:
             self.i += 1

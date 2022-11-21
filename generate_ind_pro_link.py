@@ -33,7 +33,7 @@ if __name__ == "__main__":
     import undetected_chromedriver.v2 as uc
 
     driver = uc.Chrome()
-    linksFileNumber = 2
+    linksFileNumber = 6
     links = pd.read_csv(f"links{linksFileNumber}.txt", header=None)
     #linksFile = open(f"links{linksFileNumber}.txt", 'r')
 
@@ -52,13 +52,14 @@ if __name__ == "__main__":
     #for index,url in enumerate(urls):
     #linksFile.
     for index,url in enumerate(urls):
-        time.sleep(2)
+        #time.sleep(2)
         # if i >= 5:
         #     i=0
         #     driver.close()
         #     driver = webdriver.Chrome()
         driver.delete_all_cookies()  # Deletes all the cookie
         driver.get(url)
+        time.sleep(2)
         i += 1
         try:
             checkBox = driver.find_element(By.ID, "tos-checkbox")
@@ -70,7 +71,7 @@ if __name__ == "__main__":
                 if btnContToResults:
                     btnContToResults.send_keys(Keys.RETURN)
         except Exception as e:
-            print(e)
+            print('error: unable to locate checkbox modal')
             #failed_links_file.write(f"{index},{url}\n")
 
         try:
