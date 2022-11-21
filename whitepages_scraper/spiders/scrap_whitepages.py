@@ -31,7 +31,7 @@ class ScrapWhitepagesSpider(scrapy.Spider):
             print(link)
             # 18.116.246.234
             # https://18.116.246.234/name/Donzel/AR?fs=1&page=5&searchedLocation=Arkansas&searchedName=Donzel
-            link = 'https://18.116.246.234/name/Donzel/AR?fs=1&page=5&searchedLocation=Arkansas&searchedName=Donzel'
+            #link = 'https://18.116.246.234/name/Donzel/AR?fs=1&page=5&searchedLocation=Arkansas&searchedName=Donzel'
             yield scrapy.Request(url=str(link), callback=self.parse, headers=HEADERS)
             t += 1
             if t > 10:
