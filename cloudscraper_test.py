@@ -1,4 +1,11 @@
+from bs4 import BeautifulSoup as beauty
 import cloudscraper
-scraper = cloudscraper.create_scraper()  # returns a CloudScraper instance
-# Or: scraper = cloudscraper.CloudScraper()  # CloudScraper inherits from requests.Session
-print(scraper.get("https://www.whitepages.com/name/Donzel/AR?fs=1&page=5&searchedLocation=Arkansas&searchedName=Donzel").text)  # => "<!DOCTYPE html><html><head>..."
+
+scraper = cloudscraper.create_scraper(delay=10, browser='chrome') 
+url = "https://www.whitepages.com/name/Josephine-K-Neal/Anchorage-AK/Pk3nLQEgJO9"
+info = scraper.get(url).text
+soup = beauty(info, "html.parser")
+soup = soup.find_all('script')
+
+for data in soup:
+    print(data.get_text())

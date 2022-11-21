@@ -7,3 +7,5 @@ scrapy startproject tutorial
 scrapy genspider example example.com
 
 scrapy crawl quotes
+
+pip install cloudscraper
