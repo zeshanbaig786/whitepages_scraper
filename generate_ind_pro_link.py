@@ -30,7 +30,7 @@ chromedriver_autoinstaller.install()  # Check if the current version of chromedr
 # chrome_options=opts
 #driver = webdriver.Chrome()
 if __name__ == "__main__":
-    import undetected_chromedriver.v2 as uc
+    import undetected_chromedriver as uc
 
     driver = uc.Chrome()
     linksFileNumber = 6
