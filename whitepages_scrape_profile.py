@@ -2,7 +2,7 @@ import time
 import pandas as pd
 import re
 from selenium.webdriver.common.by import By
-
+from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 import chromedriver_autoinstaller
 
@@ -16,14 +16,20 @@ if __name__ == "__main__":
     print('importing undetected_chromedriver')
     import undetected_chromedriver as uc
     print('creating driver')
-    driver = uc.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument("--disable-infobars")
+    options.add_argument("--start-maximized")
+    options.add_argument("--disable-extensions")
+    options.add_argument('--window-size=1920,1080')
+    #options.add_argument("--headless")
+    driver = uc.Chrome(use_subprocess=True, options=options)
     print('reading csv')
     links = pd.read_csv("profile-links.txt", header=None)
     print('taking ony urls')
     urls = links[1]
     print(f'urls length original is {len(urls)}')
     driver.delete_all_cookies()  # Deletes all the cookies
-    for i in [41,37]:
+    for i in [41,37,42,47,1368,2521,702,16]:
         urls = urls[i:]
         print(f'urls length after moving {i} is {len(urls)}')
     # base_page_url = 'https://www.whitepages.com/'
@@ -41,7 +47,7 @@ if __name__ == "__main__":
             print(f'opening url = {url}')
             driver.get(url)
             print('sleeping...')
-            time.sleep(2)
+            time.sleep(10)
             print('extractig data')
             path = "/html/body/script[1]"
             script = driver.find_element(By.XPATH, path)
